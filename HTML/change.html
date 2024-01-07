@@ -45,21 +45,7 @@
 		<a href='#'><img src="首頁2.jpg" alt=' ' ></a>
 		</div>
     </section>
-	<script>
-       
-        var currentImageIndex = 0;
-        var slides = document.querySelectorAll('#home .slide');
-
-        function showNextSlide() {
-            slides[currentImageIndex].style.display = 'none';
-            currentImageIndex = (currentImageIndex + 1) % slides.length;
-            slides[currentImageIndex].style.display = 'block';
-        }
-
-      
-        setInterval(showNextSlide, 5000);
-		slides[currentImageIndex].style.display = 'block';
-    </script>
+	
 	
 
     <section id="about">
