@@ -92,7 +92,7 @@
     </nav>
 
     <section id="home">
-        
+        <div class="slide">
             <img src="首頁 1.jpg" alt="Image 1">
             <div class="image-text">
                 <h2>了解這款遊戲的背景</h2>
@@ -100,9 +100,30 @@
 				<a href="#about">了解更多</a>
 				
             </div>
+	    <div class="slide">
+            <img src="首頁2.jpg" alt="Image 2">
+            <div class="image-text">
+                <h2>看更多遊戲的角色</h2>
+				<a href="#introduction">了解更多</a>
+            </div>
+        </div>
     </section>
-	
-	
+
+	<script>
+       
+        var currentImageIndex = 0;
+        var slides = document.querySelectorAll('#home .slide');
+
+        function showNextSlide() {
+            slides[currentImageIndex].style.display = 'none';
+            currentImageIndex = (currentImageIndex + 1) % slides.length;
+            slides[currentImageIndex].style.display = 'block';
+        }
+
+      
+        setInterval(showNextSlide, 5000);
+		slides[currentImageIndex].style.display = 'block';
+    </script>
 
     <section id="about">
         <div class="about-box">
