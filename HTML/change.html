@@ -15,7 +15,7 @@
 	
     function init() {
         var url =
-        'https://docs.google.com/spreadsheets/d/1oNawtJhtS2UtoEt8HWbSBO9E1QYzlKTl_zO_7aw-QZ8/gviz/tq?sheet=首頁'; //做卡片的試算表
+        'https://docs.google.com/spreadsheets/d/1oNawtJhtS2UtoEt8HWbSBO9E1QYzlKTl_zO_7aw-QZ8/gviz/tq?sheet=首頁'; 
         var query = new google.visualization.Query(url);
 		query.setQuery('select *');
 		query.send(processSheetsData);
@@ -51,9 +51,9 @@
                         </div>`;
         }
 
-        document.getElementById("home").innerHTML = str;
-		}
-		function formresponse() { //拿到表單回應
+      
+	}
+		function formresponse() {
 		var name = document.forms["form1"]["name"].value;
 		var email = document.forms["form1"]["email"].value;
         var mg = document.forms["form1"]["message"].value;
