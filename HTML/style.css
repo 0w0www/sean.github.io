@@ -51,7 +51,8 @@
 		section#home {
             overflow: hidden;
 			text-align: center;
-        }	
+        }
+
 		.slide {
 			position: relative;
 			margin-top: 300px;
@@ -59,10 +60,12 @@
 			transform: translate(-50%, -50%);
 			display: none;
 			margin-bottom: -250px;
+		
 		}
+		
 		.image-text {
             position: absolute;
-            top: 120%;
+            top: 85%;
             left: 20%;
             transform: translate(-50%, -50%);
             color: #fff;
@@ -258,4 +261,5 @@
 		.background-images a {
 			 margin-bottom: 10px;
 		}
-		
+	
+	
