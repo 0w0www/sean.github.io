@@ -78,7 +78,15 @@
             text-align: center;
             font-size: 24px;
         }
-		
+		.image-text a {
+			display: inline-block;
+			padding: 16px;
+			background-color: #3498db;
+			color: #fff;
+			text-decoration: none;
+			margin-top: 0px;
+			border-radius: 99em;
+		}
 		
 		
 
@@ -263,6 +271,113 @@
     </style>
 	
 	
+	
+
+
+    
+
+
+
+	
+	
+
+	
+</head>
+<body>
+	<div class="background-overlay"></div>
+
+    <header>
+        <img src='title.jpg'>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#home">首頁</a></li>
+            <li><a href="#about">關於</a></li>
+            <li><a href="#introduction">介紹</a></li>
+            <li><a href="#contact">聯絡我們</a></li>
+        </ul>
+    </nav>
+
+    <section id="home">
+        <div class="slide">
+            <img src="首頁 1.jpg" alt="Image 1">
+            <div class="image-text">
+                <h2>&nbsp;&nbsp;&nbsp;&nbsp;了解這款遊戲的背景</h2>
+                
+				<a href="#about">了解更多</a>
+				
+            </div>
+        </div>
+        <div class="slide">
+            <img src="首頁2.jpg" alt="Image 2">
+            <div class="image-text">
+                <h2>看更多遊戲的角色</h2>
+				<a href="#introduction">了解更多</a>
+            </div>
+        </div>
+    </section>
+	<script>
+       
+        var currentImageIndex = 0;
+        var slides = document.querySelectorAll('#home .slide');
+
+        function showNextSlide() {
+            slides[currentImageIndex].style.display = 'none';
+            currentImageIndex = (currentImageIndex + 1) % slides.length;
+            slides[currentImageIndex].style.display = 'block';
+        }
+
+      
+        setInterval(showNextSlide, 5000);
+		slides[currentImageIndex].style.display = 'block';
+    </script>
+	
+
+    <section id="about">
+        <div class="about-box">
+            <h3>遊戲簡介</h3>
+            <p>劇情主要是個穿梭於群星之間的星際旅行故事，講述主角「開拓者」登上「星穹列車」漫遊宇宙中各大行星，並在冒險中解決「星核」對各世界帶來的災難。</p>
+        </div>
+        <div class="about-box">
+            <h3>想要了解更多資訊嗎?</h3>
+            <a href="https://hsr.hoyoverse.com/zh-tw/home" target="_blank">了解更多</a>
+        </div>
+        <div class="about-box">
+            <h3>玩法簡介</h3>
+             <p>《崩壞：星穹鐵道》是一款戰略角色扮演遊戲，戰鬥模式為回合制，每個隊伍可包含四名角色，可以根據不同定位、屬性組出獨一無二的隊伍，遊戲並非開放世界，而是採用箱庭探索式的地圖，以一個星球作為章節，每個星球都會遇到不同的人事物，並在探索的過程中逐漸了解宇宙的秘密</p>
+        </div>
+    </section>
+
+    <section id="introduction">
+		
+        <div class="intro-box" style="background-image: url('介紹 1.png');">
+			<a href="./intro_page1.html"><h3>霍霍</h3></a>
+		</div>
+		
+        <div class="intro-box" style="background-image: url('介紹 2.png');">
+            <a href="./intro_page2.html"><h3>卡芙卡</h3></a>
+        </div>
+        
+		<div class="intro-box" style="background-image: url('介紹 3.png');">
+			<a href="./intro_page3.html"><h3>托帕&帳帳</h3></a>
+		</div>
+      
+        <div class="intro-box" style="background-image: url('介紹 4.png');">
+            <a href="./intro_page4.html"><h3>鏡流</h3></a>
+        </div>
+		
+        <div class="intro-box" style="background-image: url('介紹 5.png');">
+            <a href="./intro_page5.html"><h3>阮‧梅</h3></a>
+        </div>
+		
+        <div class="intro-box" style="background-image: url('介紹 6.png');">
+			<a href="./intro_page6.html"><h3>飲月</h3></a>
+        </div>
+		
+
+		</section>
+		
 	<script src="https://www.gstatic.com/charts/loader.js"></script>
 
     <script type="text/javascript">
@@ -319,10 +434,8 @@
         }
 
         document.getElementById("home").innerHTML = str;
-    }
-
-
-    function formresponse() { //拿到表單回應
+		}
+		function formresponse() { //拿到表單回應
 		var name = document.forms["form1"]["name"].value;
 		var email = document.forms["form1"]["email"].value;
         var mg = document.forms["form1"]["message"].value;
@@ -349,109 +462,7 @@
 	}
 
     </script>
-
-
-
 	
-	
-
-	
-</head>
-<body>
-	<div class="background-overlay"></div>
-
-    <header>
-        <img src='title.jpg'>
-    </header>
-
-    <nav>
-        <ul>
-            <li><a href="#home">首頁</a></li>
-            <li><a href="#about">關於</a></li>
-            <li><a href="#introduction">介紹</a></li>
-            <li><a href="#contact">聯絡我們</a></li>
-        </ul>
-    </nav>
-
-    <section id="home">
-        <div class="slide">
-            <img src="首頁 1.jpg" alt="Image 1">
-            <div class="image-text">
-                <h2>&nbsp;&nbsp;&nbsp;&nbsp;了解這款遊戲的背景</h2>
-                
-				<a href="#about">了解更多</a>
-				
-            </div>
-        </div>
-        <div class="slide">
-            <img src="首頁2.jpg" alt="Image 2">
-            <div class="image-text">
-                <h2>看更多遊戲的角色</h2>
-				<a href="#introduction">了解更多</a>
-            </div>
-        </div>
-    </section>
-	<script>
-        // JavaScript for slideshow
-        var currentImageIndex = 0;
-        var slides = document.querySelectorAll('#home .slide');
-
-        function showNextSlide() {
-            slides[currentImageIndex].style.display = 'none';
-            currentImageIndex = (currentImageIndex + 1) % slides.length;
-            slides[currentImageIndex].style.display = 'block';
-        }
-
-        // Set an interval to change slides every 5 seconds (adjust as needed)
-        setInterval(showNextSlide, 5000);
-		slides[currentImageIndex].style.display = 'block';
-    </script>
-	
-
-    <section id="about">
-        <div class="about-box">
-            <h3>遊戲簡介</h3>
-            <p>劇情主要是個穿梭於群星之間的星際旅行故事，講述主角「開拓者」登上「星穹列車」漫遊宇宙中各大行星，並在冒險中解決「星核」對各世界帶來的災難。</p>
-        </div>
-        <div class="about-box">
-            <h3>想要了解更多資訊嗎?</h3>
-            <a href="https://hsr.hoyoverse.com/zh-tw/home" target="_blank">了解更多</a>
-        </div>
-        <div class="about-box">
-            <h3>玩法簡介</h3>
-             <p>《崩壞：星穹鐵道》是一款戰略角色扮演遊戲，戰鬥模式為回合制，每個隊伍可包含四名角色，可以根據不同定位、屬性組出獨一無二的隊伍，遊戲並非開放世界，而是採用箱庭探索式的地圖，以一個星球作為章節，每個星球都會遇到不同的人事物，並在探索的過程中逐漸了解宇宙的秘密</p>
-        </div>
-    </section>
-
-    <section id="introduction">
-		
-        <div class="intro-box" style="background-image: url('介紹 1.png');">
-			<a href="./intro_page1.html"><h3>霍霍</h3></a>
-		</div>
-		
-        <div class="intro-box" style="background-image: url('介紹 2.png');">
-            <a href="./intro_page2.html"><h3>卡芙卡</h3></a>
-        </div>
-        
-		<div class="intro-box" style="background-image: url('介紹 3.png');">
-			<a href="./intro_page3.html"><h3>托帕&帳帳</h3></a>
-		</div>
-      
-        <div class="intro-box" style="background-image: url('介紹 4.png');">
-            <a href="./intro_page4.html"><h3>鏡流</h3></a>
-        </div>
-		
-        <div class="intro-box" style="background-image: url('介紹 5.png');">
-            <a href="./intro_page5.html"><h3>阮‧梅</h3></a>
-        </div>
-		
-        <div class="intro-box" style="background-image: url('介紹 6.png');">
-			<a href="./intro_page6.html"><h3>飲月</h3></a>
-        </div>
-		
-
-		</section>
-		
 	
 	<div class="col-lg-6 col-12">
                                 <form id="contact" class="custom-form contact-form" action="javascript:formresponse()" method="post" role="form" name="form1">
