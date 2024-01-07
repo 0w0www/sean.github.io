@@ -52,6 +52,14 @@
             overflow: hidden;
 			text-align: center;
         }	
+		.slide {
+			position: relative;
+			margin-top: 300px;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			display: none;
+			margin-bottom: -250px;
+		}
 		.image-text {
             position: absolute;
             top: 120%;
