@@ -8,9 +8,12 @@
 	<script src="https://www.gstatic.com/charts/loader.js"></script>
 	<script type="text/javascript">
 
+	google.charts.load('current', {'packages':['corechart']});
+	
+	google.charts.setOnLoadCallback(init);
+
 	
     function init() {
-		 https://docs.google.com/spreadsheets/d/1oNawtJhtS2UtoEt8HWbSBO9E1QYzlKTl_zO_7aw-QZ8/edit?usp=sharing
         var url =
         'https://docs.google.com/spreadsheets/d/1oNawtJhtS2UtoEt8HWbSBO9E1QYzlKTl_zO_7aw-QZ8/gviz/tq?sheet=首頁'; //做卡片的試算表
         var query = new google.visualization.Query(url);
