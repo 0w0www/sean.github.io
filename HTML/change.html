@@ -8,38 +8,38 @@
 	<script src="https://www.gstatic.com/charts/loader.js"></script>
 	<script type="text/javascript">
 
-   	// https://developers.google.com/chart/interactive/docs/quick_start
+    // https://developers.google.com/chart/interactive/docs/quick_start
 	// Load the Visualization API and the corechart package.
 	google.charts.load('current', {'packages':['corechart']});
 	
 	// Set a callback to run when the Google Visualization API is loaded.	
 	google.charts.setOnLoadCallback(init);
-    	// google.charts.setOnLoadCallback(init2);
+    // google.charts.setOnLoadCallback(init2);
 	
-    	function init() {
+    function init() {
 		// 這個例子使用的試算表是 https://docs.google.com/spreadsheets/d/1QScI5d56Kh-LGywY4WR6EvRGPcalFQYUAdqMxbFVDvk/copy
 		// 將上述試算表另存副本後，你要在自己的雲端硬碟將該試算表設定成[知道連結的使用者都能查看]。
 		// 然後讓程式讀取 https://docs.google.com/spreadsheets/d/瀏覽器網址列上的網址擷取序號部分/gviz/tq?sheet=工作表名稱
 		// 也就是將下列的 1QScI5d56Kh-LGywY4WR6EvRGPcalFQYUAdqMxbFVDvk 更換成自己的檔案序號，以及最後部分指讀取哪個工作表。
-     		https://docs.google.com/spreadsheets/d/1oNawtJhtS2UtoEt8HWbSBO9E1QYzlKTl_zO_7aw-QZ8/edit?usp=sharing
-       		var url =
-       		'https://docs.google.com/spreadsheets/d/1oNawtJhtS2UtoEt8HWbSBO9E1QYzlKTl_zO_7aw-QZ8/gviz/tq?sheet=首頁'; //做卡片的試算表
-      	 	var query = new google.visualization.Query(url);
+       https://docs.google.com/spreadsheets/d/1oNawtJhtS2UtoEt8HWbSBO9E1QYzlKTl_zO_7aw-QZ8/edit?usp=sharing
+        var url =
+        'https://docs.google.com/spreadsheets/d/1oNawtJhtS2UtoEt8HWbSBO9E1QYzlKTl_zO_7aw-QZ8/gviz/tq?sheet=首頁'; //做卡片的試算表
+        var query = new google.visualization.Query(url);
 		query.setQuery('select *');
 		query.send(processSheetsData);
 	}
 
-   	function processSheetsData(response) {
-       		var data = response.getDataTable();
-        	var columns = data.getNumberOfColumns();
-        	var rows = data.getNumberOfRows();
-        	var str = "";
+    function processSheetsData(response) {
+        var data = response.getDataTable();
+        var columns = data.getNumberOfColumns();
+        var rows = data.getNumberOfRows();
+        var str = "";
 
-        	for (r = 0; r < rows; r++ ){
-            		str = str + `<div class="col-lg-4 col-12">
+        for (r = 0; r < rows; r++ ){
+            str = str + `<div class="col-lg-4 col-12">
                             <div class="projects-thumb projects-thumb-small">
                                 <a href="subpage.html?id=${data.getFormattedValue(r,0)}">
-                                    <img src="${data.getFormattedValue(r,1)}" class="img-fluid projects-image" alt="">
+                                    
                                     
                                     <div class="projects-info">
                                         <div class="projects-title-wrap">
@@ -57,14 +57,14 @@
                                 </a>
                             </div>
                         </div>`;
-        	}
+        }
 
-        	document.getElementById("home").innerHTML = str;
+        document.getElementById("home").innerHTML = str;
 		}
 		function formresponse() { //拿到表單回應
 		var name = document.forms["form1"]["name"].value;
 		var email = document.forms["form1"]["email"].value;
-        	var mg = document.forms["form1"]["message"].value;
+        var mg = document.forms["form1"]["message"].value;
 		if (name==null || name=="")
 		{
 			alert("請輸入姓名！");
@@ -75,7 +75,7 @@
 			alert("請輸入電子郵件！");
 			return false;
 		}
-        	else if (mg==null || mg=="")
+        else if (mg==null || mg=="")
 		{
 			alert("留下你寶貴的意見吧！");
 			return false;
