@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首頁</title>
+    <style>
+		html {
+			scroll-behavior: smooth;
+		}
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+		
+        }
+		.background-overlay {
+            position:fixed;
+            width: 100%;
+            height: 100%;
+            background-image: url('背景.png');
+            background-size: cover;
+            opacity: 0.8;
+            z-index: -1;
+        }
+        header {
+            background-color: #171717;
+            text-align: center;
+        }
+        nav {
+            background-color: #f2f2f2;
+            padding: 10px;
+            text-align: center;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        nav li {
+            display: inline;
+            margin-right: 20px;
+        }
+        section {
+            padding: 20px;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+		
+		section#home {
+            overflow: hidden;
+			text-align: center;
+        }
+
+		.slide {
+			position: relative;
+			margin-top: 300px;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			display: none;
+			margin-bottom: -250px;
+		}
+		
+		.image-text {
+            position: absolute;
+            top: 85%;
+            left: 20%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            text-align: center;
+            font-size: 24px;
+        }
+		
+		
+		
+
+        section#about {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+			margin-bottom: 100px;
+        }
+
+        .about-box {
+            margin: 10px;
+            padding: 20px;
+            text-align: center;
+			background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+			display: flex;
+			flex-direction: column;
+			
+        }
+
+        .about-box:nth-child(1) {
+            background-image: url('2.png');
+            width: 570px;
+            height: 500px;
+            color: #FDFEFE  ;
+            position: relative;
+        }
+
+        .about-box:nth-child(1) h3 {
+            margin-top: 380px;
+            color: #F0F3F4   ; 
+			font-size: 29px;
+        }
+
+        .about-box:nth-child(1) p {
+			margin-top: 0px;
+            margin-bottom: 0;
+			font-size: 19px;
+        }
+		.about-box:nth-child(2) {
+            background-image: url('2.jpg');
+            width: 570px;
+            height: 500px;
+			color: #fff;
+            position: relative;
+        }
+		.about-box:nth-child(2) h3 {
+            margin-top: 40px;
+            color: #FDFEFE    ; 
+			font-size: 50px;
+			
+        }
+		.about-box a {
+			display: inline-block;
+			padding: 10px;
+			background-color: #FFAC12;
+			color: #FFF;
+			text-decoration: none;
+			border-radius: 10px;
+			margin-top: 0px;
+		}
+		
+		.about-box:nth-child(3) {
+            background-image: url('6.jpg');
+			background-size: contain;
+            width: 2000px;
+            height: 910px;
+			order: 10;
+        }
+
+        .about-box:nth-child(3) h3 {
+            margin-top: 0px; 
+            color:  #F0F3F4   ;
+			font-size: 29px;
+			
+        }
+
+        .about-box:nth-child(3) p {
+			margin-top: 0px;
+			color:  #F0F3F4;
+			font-size: 22px;
+			
+		}
+		
+		#introduction {
+		display: flex;
+		justify-content: space-around;
+		align-items: flex-start; 
+		flex-wrap: wrap;
+		}
+		
+		.intro-box {
+            width: calc(33.33% - 20px); 
+            margin: 10px;
+            padding: 200px;
+            text-align: center;
+            background-size: contain;
+            background-position: center center;
+            background-repeat: no-repeat;
+            position: relative;
+            cursor: pointer;
+            box-sizing: border-box;
+			margin-bottom: 80px;
+        }
+		
+        .intro-box:hover {
+            transform: scale(1.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .intro-box h3 {
+			position: absolute;
+            color: #EBEB00;
+            font-size: 40px;
+			top: 90%;
+			left: 50%; 
+			transform: translateX(-50%);
+   /
+			
+        }
+		.custom-form {
+			background-color: #FAD7A0;
+			padding: 30px;
+			border-radius: 10px;
+			box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+			margin: auto;
+			max-width: 100%; 
+		}
+		.form-control {
+			width: 40%;
+			padding: 10px;
+			border: 1px solid #ddd;
+			border-radius: 5px;
+		}
+		button {
+			background-color: #3498db;
+			color: #fff;
+			padding: 10px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			width: 40%;
+		}
+
+		button:hover {
+			background-color: #2980b9;
+		}
+		.custom-form.contact-form .row {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+		}
+		.custom-form.contact-form .form-control {
+			width: 100%;
+			margin-top: 5px;
+			display: inline-block;
+		}	
+
+		.custom-form.contact-form button {
+			width: 100%;
+			margin-top: 5px; 
+			
+		}
+		
+
+		.background-images {
+			position: absolute;
+			top:0;
+			right: 10;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-end;
+			margin-top: 20px;
+			margin-right: 20px;
+		}
+
+		.background-images a {
+			 margin-bottom: 10px;
+		}
+    </style>
+	
+	
+	<script src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <script type="text/javascript">
+
+    // https://developers.google.com/chart/interactive/docs/quick_start
+	// Load the Visualization API and the corechart package.
+	google.charts.load('current', {'packages':['corechart']});
+	
+	// Set a callback to run when the Google Visualization API is loaded.	
+	google.charts.setOnLoadCallback(init);
+    // google.charts.setOnLoadCallback(init2);
+	
+    function init() {
+		// 這個例子使用的試算表是 https://docs.google.com/spreadsheets/d/1QScI5d56Kh-LGywY4WR6EvRGPcalFQYUAdqMxbFVDvk/copy
+		// 將上述試算表另存副本後，你要在自己的雲端硬碟將該試算表設定成[知道連結的使用者都能查看]。
+		// 然後讓程式讀取 https://docs.google.com/spreadsheets/d/瀏覽器網址列上的網址擷取序號部分/gviz/tq?sheet=工作表名稱
+		// 也就是將下列的 1QScI5d56Kh-LGywY4WR6EvRGPcalFQYUAdqMxbFVDvk 更換成自己的檔案序號，以及最後部分指讀取哪個工作表。
+       https://docs.google.com/spreadsheets/d/1oNawtJhtS2UtoEt8HWbSBO9E1QYzlKTl_zO_7aw-QZ8/edit?usp=sharing
+        var url =
+        'https://docs.google.com/spreadsheets/d/1oNawtJhtS2UtoEt8HWbSBO9E1QYzlKTl_zO_7aw-QZ8/gviz/tq?sheet=首頁'; //做卡片的試算表
+        var query = new google.visualization.Query(url);
+		query.setQuery('select *');
+		query.send(processSheetsData);
+	}
+
+    function processSheetsData(response) {
+        var data = response.getDataTable();
+        var columns = data.getNumberOfColumns();
+        var rows = data.getNumberOfRows();
+        var str = "";
+
+        for (r = 0; r < rows; r++ ){
+            str = str + `<div class="col-lg-4 col-12">
+                            <div class="projects-thumb projects-thumb-small">
+                                <a href="subpage.html?id=${data.getFormattedValue(r,0)}">
+                                    <img src="${data.getFormattedValue(r,1)}" class="img-fluid projects-image" alt="">
+                                    
+                                    <div class="projects-info">
+                                        <div class="projects-title-wrap">
+                                            <small class="projects-small-title">${data.getFormattedValue(r,2)}</small>
+
+                                            <h2 class="projects-title">${data.getFormattedValue(r,3)}</h2>
+                                        </div>
+
+                                        <div class="projects-btn-wrap mt-4">
+                                            <span class="custom-btn btn" href="subpage.html?id=${data.getFormattedValue(r,0)}">
+                                                <i class="bi-arrow-right"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>`;
+        }
+
+        document.getElementById("home").innerHTML = str;
+    }
+
+
+    function formresponse() { //拿到表單回應
+		var name = document.forms["form1"]["name"].value;
+		var email = document.forms["form1"]["email"].value;
+        var mg = document.forms["form1"]["message"].value;
+		if (name==null || name=="")
+		{
+			alert("請輸入姓名！");
+			return false;
+		}
+		else if (email==null || email=="")
+		{
+			alert("請輸入電子郵件！");
+			return false;
+		}
+        else if (mg==null || mg=="")
+		{
+			alert("留下你寶貴的意見吧！");
+			return false;
+		}
+		else
+		{
+			var MySubmit = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSfR1_zLFjrWWoIlsmaBl1P-GA8XqqW_gSiFQBXtuDhHa1ApTA/formResponse?entry.1124667204=" + name + "&entry.310022583=" + email + "&entry.953560961=" + mg + "&submit=Submit";
+			var NewOpen = window.open(MySubmit);
+		}
+	}
+
+    </script>
+
+
+
+	
+	
+
+	
+</head>
+<body>
+	<div class="background-overlay"></div>
+
+    <header>
+        <img src='title.jpg'>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#home">首頁</a></li>
+            <li><a href="#about">關於</a></li>
+            <li><a href="#introduction">介紹</a></li>
+            <li><a href="#contact">聯絡我們</a></li>
+        </ul>
+    </nav>
+
+    <section id="home">
+        <div class="slide">
+            <img src="首頁 1.jpg" alt="Image 1">
+            <div class="image-text">
+                <h2>&nbsp;&nbsp;&nbsp;&nbsp;了解這款遊戲的背景</h2>
+                
+				<a href="#about">了解更多</a>
+				
+            </div>
+        </div>
+        <div class="slide">
+            <img src="首頁2.jpg" alt="Image 2">
+            <div class="image-text">
+                <h2>看更多遊戲的角色</h2>
+				<a href="#introduction">了解更多</a>
+            </div>
+        </div>
+    </section>
+	<script>
+        // JavaScript for slideshow
+        var currentImageIndex = 0;
+        var slides = document.querySelectorAll('#home .slide');
+
+        function showNextSlide() {
+            slides[currentImageIndex].style.display = 'none';
+            currentImageIndex = (currentImageIndex + 1) % slides.length;
+            slides[currentImageIndex].style.display = 'block';
+        }
+
+        // Set an interval to change slides every 5 seconds (adjust as needed)
+        setInterval(showNextSlide, 5000);
+		slides[currentImageIndex].style.display = 'block';
+    </script>
+	
+
+    <section id="about">
+        <div class="about-box">
+            <h3>遊戲簡介</h3>
+            <p>劇情主要是個穿梭於群星之間的星際旅行故事，講述主角「開拓者」登上「星穹列車」漫遊宇宙中各大行星，並在冒險中解決「星核」對各世界帶來的災難。</p>
+        </div>
+        <div class="about-box">
+            <h3>想要了解更多資訊嗎?</h3>
+            <a href="https://hsr.hoyoverse.com/zh-tw/home" target="_blank">了解更多</a>
+        </div>
+        <div class="about-box">
+            <h3>玩法簡介</h3>
+             <p>《崩壞：星穹鐵道》是一款戰略角色扮演遊戲，戰鬥模式為回合制，每個隊伍可包含四名角色，可以根據不同定位、屬性組出獨一無二的隊伍，遊戲並非開放世界，而是採用箱庭探索式的地圖，以一個星球作為章節，每個星球都會遇到不同的人事物，並在探索的過程中逐漸了解宇宙的秘密</p>
+        </div>
+    </section>
+
+    <section id="introduction">
+		
+        <div class="intro-box" style="background-image: url('介紹 1.png');">
+			<a href="./intro_page1.html"><h3>霍霍</h3></a>
+		</div>
+		
+        <div class="intro-box" style="background-image: url('介紹 2.png');">
+            <a href="./intro_page2.html"><h3>卡芙卡</h3></a>
+        </div>
+        
+		<div class="intro-box" style="background-image: url('介紹 3.png');">
+			<a href="./intro_page3.html"><h3>托帕&帳帳</h3></a>
+		</div>
+      
+        <div class="intro-box" style="background-image: url('介紹 4.png');">
+            <a href="./intro_page4.html"><h3>鏡流</h3></a>
+        </div>
+		
+        <div class="intro-box" style="background-image: url('介紹 5.png');">
+            <a href="./intro_page5.html"><h3>阮‧梅</h3></a>
+        </div>
+		
+        <div class="intro-box" style="background-image: url('介紹 6.png');">
+			<a href="./intro_page6.html"><h3>飲月</h3></a>
+        </div>
+		
+
+		</section>
+		
+	
+	<div class="col-lg-6 col-12">
+                                <form id="contact" class="custom-form contact-form" action="javascript:formresponse()" method="post" role="form" name="form1">
+                             
+                                    <h3 class="mb-5">留下你的資訊及問題吧!</h3>
+
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6 col-12">                                    
+                                            <input type="text" name="name" id="name" class="form-control" placeholder="姓名" required="">
+                                        </div>
+
+                                        <div class="col-lg-6 col-md-6 col-12">         
+                                            <input type="email" name="email" id="email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="電子郵件" required="">
+                                        </div>
+
+                                        <div class="col-12">
+                                            <textarea class="form-control" rows="7" id="message" name="message" placeholder="Message"></textarea><br>
+
+                                            <button type="submit" class="form-control">提交</button>
+				
+                                        </div>
+									
+                                    </div>
+                                </form>
+                            </div>
+
+    
+	
+
+        <div class="background-images">
+            <a href="https://apps.apple.com/us/app/honkai-star-rail/id1599719154" target="_blank">
+                <img src="下載1.png" alt="圖片1描述">
+            </a>
+            <a href="https://play.google.com/store/apps/details?id=com.HoYoverse.hkrpgoversea&referrer=adjust_reftag%3DcnUdJck0G2Go1%26utm_source%3DOPT_HYV%2Bofficial%2Bsite%26utm_campaign%3DHYV%26utm_content%3DOPT_CB3_OFFICIAL_GP" target="_blank">
+                <img src="下載2.png" alt="圖片2描述">
+            </a>
+			</a>
+            <a href="https://sg-public-api.hoyoverse.com/event/download_porter/trace/hkrpg_global/oswebpc/default?url=https%3A%2F%2Fhsr.hoyoverse.com%2Fzh-tw%2F" target="_blank">
+                <img src="下載3.png" alt="圖片2描述">
+            </a>
+        </div>
+
+	
+</body>
+</html>
